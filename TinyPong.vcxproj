@@ -76,6 +76,7 @@
     <IntDir>build\$(Configuration)\</IntDir>
     <GenerateManifest>false</GenerateManifest>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);src</IncludePath>
+    <ExecutablePath>$(SolutionDir)/tools;$(VC_ExecutablePath_x86);$(CommonExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -83,6 +84,7 @@
     <IntDir>build\$(Configuration)\</IntDir>
     <GenerateManifest>false</GenerateManifest>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);src</IncludePath>
+    <ExecutablePath>tools;$(VC_ExecutablePath_x86);$(CommonExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -137,6 +139,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <StructMemberAlignment>Default</StructMemberAlignment>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -150,8 +153,7 @@
       <SectionAlignment>16</SectionAlignment>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <MergeSections>/merge:.rdata=.text</MergeSections>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <AdditionalOptions>/CRINKLER</AdditionalOptions>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>

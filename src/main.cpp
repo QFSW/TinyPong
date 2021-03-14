@@ -90,11 +90,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     const char* window_name = "Tiny Pong";
 
     WNDCLASS wc = { };
-
     wc.lpfnWndProc = WindowProc;
     wc.hInstance = hInstance;
     wc.lpszClassName = window_name;
-
     RegisterClass(&wc);
 
     // Create the window.
@@ -125,6 +123,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 
     Game game(hwnd, players);
     MSG msg = { };
+
     while (msg.message != WM_QUIT)
     {
         if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))

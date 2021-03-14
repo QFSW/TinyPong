@@ -6,7 +6,10 @@ Game::Game(HWND window, Paddle* players)
     : _window(window)
     , _players(players)
     , _last_tick(GetTickCount())
-{ }
+{
+    _players[0] = Paddle();
+    _players[1] = Paddle();
+}
 
 void Game::tick()
 {
